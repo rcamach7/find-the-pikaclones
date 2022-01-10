@@ -23,7 +23,7 @@ function Navbar() {
 function PictureContainer() {
   return (
     <div className="PictureContainer">
-      <img src={gameImage} alt="" />
+      <img className="pictureContainer-image" src={gameImage} alt="" />
     </div>
   );
 }
