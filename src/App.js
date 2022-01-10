@@ -1,9 +1,29 @@
 import "./App.css";
+import gameImage from "./pokemons.jpeg";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Navbar />
+      <PictureContainer />
+    </div>
+  );
+}
+
+function Navbar() {
+  return (
+    <nav className="Navbar">
+      <p>
+        Navbar to include icons of characters, start button, and records button.
+      </p>
+    </nav>
+  );
+}
+
+function PictureContainer() {
+  return (
+    <div className="PictureContainer">
+      <img src={gameImage} alt="" />
     </div>
   );
 }
