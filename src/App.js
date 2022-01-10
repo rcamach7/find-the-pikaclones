@@ -1,5 +1,5 @@
 import "./App.css";
-import gameImage from "./pokemons.jpeg";
+import PictureContainer from "./components/PictureContainer";
 
 function App() {
   return (
@@ -17,14 +17,6 @@ function Navbar() {
         Navbar to include icons of characters, start button, and records button.
       </p>
     </nav>
-  );
-}
-
-function PictureContainer() {
-  return (
-    <div className="PictureContainer">
-      <img className="pictureContainer-image" src={gameImage} alt="" />
-    </div>
   );
 }
 
