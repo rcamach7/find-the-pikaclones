@@ -24,25 +24,16 @@
   justify-content: center;
   align-items: center;
 
+  border-radius: 15px;
   background-color: bisque;
 }
 
 .PictureContainer {
-  background: url("pokemons.jpeg");
-  /* background-attachment: fixed;
-  background-size: cover; */
-  overflow: scroll;
-
-  height: 80vh;
-  width: 90vw;
-  margin-top: 5vh;
-
-  border-radius: 15px;
-
-  background-color: rgb(165, 165, 165);
+  width: 100%;
 }
 
 .pictureContainer-image {
   max-width: 100%;
+  width: 100%;
   height: auto;
 }
