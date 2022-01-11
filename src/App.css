@@ -42,10 +42,27 @@
 }
 
 #pokemon-selector {
-  display: none;
-
   width: 100px;
   height: 100px;
 
+  color: white;
   background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selector-item {
+  flex: 1;
+
+  /* Center Text Inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selector-item:hover {
+  background-color: grey;
+  cursor: pointer;
 }
