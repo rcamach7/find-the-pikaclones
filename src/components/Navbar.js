@@ -2,16 +2,13 @@ import pichu from "../assets/pichu.png";
 import plusle from "../assets/plusle.png";
 import minun from "../assets/minun.png";
 
-function Navbar(props) {
+function Navbar() {
   return (
     <nav className="Navbar">
       <Icon imageSrc={pichu} />
       <Icon imageSrc={plusle} />
       <Icon imageSrc={minun} />
 
-      <button className="navbar-start" onClick={() => props.startGameToggle()}>
-        Start
-      </button>
       <button className="navbar-hallOfFame">Hall Of Fame</button>
     </nav>
   );

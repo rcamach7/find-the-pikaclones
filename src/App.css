@@ -24,6 +24,10 @@
   outline: auto;
 
   background-color: rgba(0, 0, 0, 0.8);
+
+  /* Positioning */
+  position: absolute;
+  top: 25vh;
 }
 
 .form-title {
@@ -77,16 +81,8 @@
   width: 50px;
 }
 
-.navbar-start {
-  margin-left: auto;
-  padding: 10px;
-  width: 100px;
-
-  background-color: rgb(253, 202, 0);
-  border-radius: 10px;
-}
-
 .navbar-hallOfFame {
+  margin-left: auto;
   padding: 10px;
   width: 125px;
 
