@@ -4,6 +4,8 @@
   box-sizing: border-box;
 
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
+
   padding: 0;
   margin: 0;
 }
@@ -15,6 +17,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* USER-FORM COMPONENT*/
+.UserForm {
+  color: white;
+  padding: 40px;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  border: solid 5px rgb(253, 202, 0);
+
+  /* Positioning */
+  position: absolute;
+  top: 25vh;
+}
+
+.form-title {
+  font-weight: bolder;
+}
+
+.UserForm ul li {
+  text-align: left;
+  list-style: none;
+}
+
+#beginGame-btn {
+  padding: 10px;
+  width: 125px;
+
+  margin-top: 10px;
+  background-color: rgb(253, 202, 0);
+  border-radius: 10px;
 }
 
 /* NAVBAR COMPONENT */
@@ -48,15 +81,6 @@
 
 .navbar-icon-picture {
   width: 50px;
-}
-
-.navbar-start {
-  margin-left: auto;
-  padding: 10px;
-  width: 100px;
-
-  background-color: rgb(253, 202, 0);
-  border-radius: 10px;
 }
 
 .navbar-hallOfFame {
@@ -102,4 +126,8 @@
 .selector-item:hover {
   background-color: grey;
   cursor: pointer;
+}
+
+.Timer {
+  margin-left: auto;
 }
