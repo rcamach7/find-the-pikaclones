@@ -3,15 +3,16 @@ import { useState, useEffect } from "react";
 import PictureContainer from "./components/PictureContainer";
 import Navbar from "./components/Navbar";
 import UserForm from "./components/UserForm";
-
-// Check why winner winner chicken dinner is not printing even though we have won the game.
+import EndGame from "./components/EndGame";
 
 function App() {
+  // User information
   const [userName, setUserName] = useState("");
   const [userTime, setUserTime] = useState(-1);
+  // Game State
   const [gameStarted, setGameStarted] = useState(false);
   const [gameWon, setGameWon] = useState(false);
-  // Game State
+  // Pokemon State
   const [foundPichu, setFoundPichu] = useState(false);
   const [foundPlusle, setFoundPlusle] = useState(false);
   const [foundMinun, setFoundMinun] = useState(false);
@@ -26,7 +27,6 @@ function App() {
     }
   };
 
-  // Set end game once all pokemon have been found
   useEffect(() => {
     if (foundPichu && foundMinun && foundPlusle) {
       setGameWon(true);
@@ -50,11 +50,13 @@ function App() {
       />
       <PictureContainer
         gameStarted={gameStarted}
+        gameWon={gameWon}
         handleFoundPokemon={handleFoundPokemon}
       />
       {gameStarted ? null : (
         <UserForm handleFormSubmission={handleFormSubmission} />
       )}
+      {gameWon ? <EndGame userName={userName} userTime={userTime} /> : null}
       {/* Game Status */}
       <button
         onClick={() =>

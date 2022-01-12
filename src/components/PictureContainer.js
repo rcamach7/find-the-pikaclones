@@ -8,9 +8,12 @@ function PictureContainer(props) {
   const [showSelection, setShowSelection] = useState(false);
 
   const handleClick = (e) => {
-    // First check to see if game started
+    // First check to see if game started or is over
     if (!props.gameStarted) {
       console.log("Game Not Started");
+      return;
+    } else if (props.gameWon) {
+      console.log("Game Over");
       return;
     }
 

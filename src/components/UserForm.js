@@ -16,7 +16,8 @@ const UserForm = (props) => {
   return (
     <form className="UserForm">
       <div className="form-gameRules">
-        <p className="form-title">Game Set-Up!</p>
+        <h2 className="form-title">Game Set-Up!</h2>
+        <br />
         <ul>
           <li>
             - Find 3 Pokemons: Minun, Pichu, and Plusle (see icons above for
@@ -31,7 +32,10 @@ const UserForm = (props) => {
       </div>
       <br />
       {/* BEGIN FORM INPUT */}
-      <label htmlFor="name">Enter Your Nickname</label> <br />
+      <label className="form-title" htmlFor="name">
+        Enter Username To Begin...
+      </label>{" "}
+      <br />
       <input ref={inputRef} type="text" id="name" /> <br />
       <input
         id="beginGame-btn"

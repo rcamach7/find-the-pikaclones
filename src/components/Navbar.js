@@ -4,7 +4,7 @@ import plusle from "../assets/plusle.png";
 import minun from "../assets/minun.png";
 import pokeball from "../assets/pokeball.png";
 
-function Navbar(props) {
+export default function Navbar(props) {
   return (
     <nav className="Navbar">
       <Icon imageSrc={props.foundPichu ? pokeball : pichu} />
@@ -48,5 +48,3 @@ function Timer(props) {
 
   return <div className="Timer"></div>;
 }
-
-export default Navbar;
