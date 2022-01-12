@@ -2,9 +2,18 @@ import { useState } from "react";
 
 const SelectionBox = (props) => {
   // Represents position (in percentage) of pokemon located within our image.
-  const [pichu] = useState({ xPercentage: 89, yPercentage: 54 });
-  const [plusle] = useState({ xPercentage: 27.5, yPercentage: 83 });
-  const [minun] = useState({ xPercentage: 61, yPercentage: 80 });
+  const [pichu] = useState({
+    xPercentage: 89,
+    yPercentage: 54,
+  });
+  const [plusle] = useState({
+    xPercentage: 27.5,
+    yPercentage: 83,
+  });
+  const [minun] = useState({
+    xPercentage: 61,
+    yPercentage: 80,
+  });
 
   // +- 2% of accuracy allowed
   const analyzeSelection = (selection) => {
@@ -17,6 +26,7 @@ const SelectionBox = (props) => {
         guess.yPercentage <= pichu.yPercentage + 2
       ) {
         console.log("Found Pichu!");
+        props.handleFoundPokemon("pichu");
       }
     } else if (selection === "plusle") {
       if (
@@ -26,6 +36,7 @@ const SelectionBox = (props) => {
         guess.yPercentage <= plusle.yPercentage + 2
       ) {
         console.log("Found Plusle!");
+        props.handleFoundPokemon("plusle");
       }
     } else {
       if (
@@ -35,11 +46,12 @@ const SelectionBox = (props) => {
         guess.yPercentage <= minun.yPercentage + 2
       ) {
         console.log("Found Minun!");
+        props.handleFoundPokemon("minun");
       }
     }
 
     // After Every Selection, we now want to hide our selection form.
-    props.handleSelectionHide();
+    props.setShowSelection(false);
   };
 
   return (

@@ -6,7 +6,9 @@ import UserForm from "./components/UserForm";
 
 function App() {
   const [userName, setUserName] = useState("");
+  const [userTime, setUserTime] = useState(-1);
   const [gameStarted, setGameStarted] = useState(false);
+  const [gameWon, setGameWon] = useState(false);
 
   const handleFormSubmission = (username) => {
     setUserName(username);
@@ -15,8 +17,12 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar gameStarted={gameStarted} />
-      <PictureContainer gameStarted={gameStarted} />
+      <Navbar
+        gameStarted={gameStarted}
+        gameWon={gameWon}
+        setUserTime={setUserTime}
+      />
+      <PictureContainer gameStarted={gameStarted} setGameWon={setGameWon} />
       {gameStarted ? null : (
         <UserForm handleFormSubmission={handleFormSubmission} />
       )}
