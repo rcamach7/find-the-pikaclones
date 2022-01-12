@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import pichu from "../assets/pichu.png";
 import plusle from "../assets/plusle.png";
 import minun from "../assets/minun.png";
+import pokeball from "../assets/pokeball.png";
 
 function Navbar(props) {
   return (
     <nav className="Navbar">
-      <Icon imageSrc={pichu} />
-      <Icon imageSrc={plusle} />
-      <Icon imageSrc={minun} />
+      <Icon imageSrc={props.foundPichu ? pokeball : pichu} />
+      <Icon imageSrc={props.foundPlusle ? pokeball : plusle} />
+      <Icon imageSrc={props.foundMinun ? pokeball : minun} />
 
       <Timer
         gameStarted={props.gameStarted}
