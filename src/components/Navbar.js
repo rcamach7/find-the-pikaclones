@@ -45,11 +45,7 @@ function Timer(props) {
     }
   }, [endTime, props, props.gameWon, startTime]);
 
-  return (
-    <div className="Timer">
-      <p>I am a timer</p>
-    </div>
-  );
+  return <div className="Timer"></div>;
 }
 
 export default Navbar;

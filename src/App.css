@@ -3,8 +3,8 @@
 *::after {
   box-sizing: border-box;
 
-  text-align: center;
   font-family: "Courier New", Courier, monospace;
+  text-align: center;
 
   padding: 0;
   margin: 0;
@@ -23,8 +23,9 @@
 .UserForm {
   color: white;
   padding: 40px;
+  font-size: 25px;
 
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   border: solid 5px rgb(253, 202, 0);
 
   /* Positioning */
@@ -43,7 +44,8 @@
 
 #beginGame-btn {
   padding: 10px;
-  width: 125px;
+  width: 175px;
+  font-size: 25px;
 
   margin-top: 10px;
   background-color: rgb(253, 202, 0);
@@ -72,7 +74,7 @@
   height: 75px;
 
   border-radius: 10px;
-  border: solid 2px red;
+  border: solid 5px rgb(253, 202, 0);
 
   display: flex;
   justify-content: center;
@@ -86,6 +88,9 @@
 .navbar-hallOfFame {
   padding: 10px;
   width: 125px;
+
+  font-size: 20px;
+  font-weight: bolder;
 
   background-color: rgb(253, 202, 0);
   border-radius: 10px;
@@ -105,9 +110,12 @@
 #pokemon-selector {
   width: 100px;
   height: 100px;
+  font-weight: bolder;
 
   color: white;
   background-color: black;
+  border: solid 5px rgb(253, 202, 0);
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
