@@ -2,11 +2,18 @@ import { useEffect, useState } from "react";
 import pichu from "../assets/pichu.png";
 import plusle from "../assets/plusle.png";
 import minun from "../assets/minun.png";
+import pokeball from "../assets/pokeball.png";
 
 function Navbar(props) {
+  const [pichuIcon, setPichuIcon] = useState(pichu);
+
+  useEffect(() => {
+    console.log(props.pokemonsFound);
+  }, [props.pokemonsFound]);
+
   return (
     <nav className="Navbar">
-      <Icon imageSrc={pichu} />
+      <Icon imageSrc={pichuIcon} />
       <Icon imageSrc={plusle} />
       <Icon imageSrc={minun} />
 

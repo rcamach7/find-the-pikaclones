@@ -51,6 +51,7 @@ function App() {
   return (
     <div className="App">
       <Navbar
+        pokemonsFound={pokemonsFound}
         gameStarted={gameStarted}
         gameWon={gameWon}
         setUserTime={setUserTime}
@@ -62,7 +63,7 @@ function App() {
       {gameStarted ? null : (
         <UserForm handleFormSubmission={handleFormSubmission} />
       )}
-      {/* <button onClick={() => console.log(userTime)}>yeehae</button> */}
+      <button onClick={() => console.log(pokemonsFound)}>yeehae</button>
     </div>
   );
 }
