@@ -6,11 +6,6 @@ function PictureContainer(props) {
   const [displayInformation, setDisplayInformation] = useState({});
   const [userGuessLocation, setUserGuessLocation] = useState({});
   const [showSelection, setShowSelection] = useState(false);
-  const [pokemonsFound, setPokemonsFound] = useState({
-    pichu: false,
-    plusle: false,
-    minun: false,
-  });
 
   const handleClick = (e) => {
     // First check to see if game started
@@ -31,35 +26,6 @@ function PictureContainer(props) {
     setShowSelection(true);
   };
 
-  const handleFoundPokemon = (pokemonName) => {
-    const foundCopy = pokemonsFound;
-    if (pokemonName === "pichu") {
-      foundCopy.pichu = true;
-    } else if (pokemonName === "plusle") {
-      foundCopy.plusle = true;
-    } else {
-      foundCopy.minun = true;
-    }
-    // Update state
-    setPokemonsFound(foundCopy);
-
-    // Report win if finished.
-    if (checkIfWon(foundCopy)) {
-      props.setGameWon(true);
-      console.log("winner winner chicken dinner");
-    }
-  };
-
-  const checkIfWon = (foundPokemon) => {
-    let found = true;
-    for (const key in foundPokemon) {
-      if (foundPokemon[key] === false) {
-        found = false;
-      }
-    }
-    return found;
-  };
-
   return (
     <div className="PictureContainer">
       <img
@@ -73,7 +39,7 @@ function PictureContainer(props) {
           displayInformation={displayInformation}
           userGuessLocation={userGuessLocation}
           setShowSelection={setShowSelection}
-          handleFoundPokemon={handleFoundPokemon}
+          handleFoundPokemon={props.handleFoundPokemon}
         />
       ) : null}
     </div>
