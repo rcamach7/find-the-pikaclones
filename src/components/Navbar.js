@@ -5,17 +5,11 @@ import minun from "../assets/minun.png";
 import pokeball from "../assets/pokeball.png";
 
 function Navbar(props) {
-  const [pichuIcon, setPichuIcon] = useState(pichu);
-
-  useEffect(() => {
-    console.log(props.pokemonsFound);
-  }, [props.pokemonsFound]);
-
   return (
     <nav className="Navbar">
-      <Icon imageSrc={pichuIcon} />
-      <Icon imageSrc={plusle} />
-      <Icon imageSrc={minun} />
+      <Icon imageSrc={props.foundPichu ? pokeball : pichu} />
+      <Icon imageSrc={props.foundPlusle ? pokeball : plusle} />
+      <Icon imageSrc={props.foundMinun ? pokeball : minun} />
 
       <Timer
         gameStarted={props.gameStarted}

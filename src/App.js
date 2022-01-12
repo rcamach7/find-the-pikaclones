@@ -1,47 +1,37 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PictureContainer from "./components/PictureContainer";
 import Navbar from "./components/Navbar";
 import UserForm from "./components/UserForm";
+
+// Check why winner winner chicken dinner is not printing even though we have won the game.
 
 function App() {
   const [userName, setUserName] = useState("");
   const [userTime, setUserTime] = useState(-1);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameWon, setGameWon] = useState(false);
-  const [pokemonsFound, setPokemonsFound] = useState({
-    pichu: false,
-    plusle: false,
-    minun: false,
-  });
+  // Game State
+  const [foundPichu, setFoundPichu] = useState(false);
+  const [foundPlusle, setFoundPlusle] = useState(false);
+  const [foundMinun, setFoundMinun] = useState(false);
 
   const handleFoundPokemon = (pokemonName) => {
-    const foundCopy = pokemonsFound;
     if (pokemonName === "pichu") {
-      foundCopy.pichu = true;
+      setFoundPichu(true);
     } else if (pokemonName === "plusle") {
-      foundCopy.plusle = true;
-    } else {
-      foundCopy.minun = true;
+      setFoundPlusle(true);
+    } else if (pokemonName === "minun") {
+      setFoundMinun(true);
     }
-    // Update state
-    setPokemonsFound(foundCopy);
+  };
 
-    // Report win if finished.
-    if (checkIfWon(foundCopy)) {
+  // Set end game once all pokemon have been found
+  useEffect(() => {
+    if (foundPichu && foundMinun && foundPlusle) {
       setGameWon(true);
     }
-  };
-
-  const checkIfWon = (foundPokemon) => {
-    let found = true;
-    for (const key in foundPokemon) {
-      if (foundPokemon[key] === false) {
-        found = false;
-      }
-    }
-    return found;
-  };
+  }, [foundMinun, foundPichu, foundPlusle]);
 
   const handleFormSubmission = (username) => {
     setUserName(username);
@@ -51,10 +41,12 @@ function App() {
   return (
     <div className="App">
       <Navbar
-        pokemonsFound={pokemonsFound}
         gameStarted={gameStarted}
         gameWon={gameWon}
         setUserTime={setUserTime}
+        foundPichu={foundPichu}
+        foundPlusle={foundPlusle}
+        foundMinun={foundMinun}
       />
       <PictureContainer
         gameStarted={gameStarted}
@@ -63,7 +55,16 @@ function App() {
       {gameStarted ? null : (
         <UserForm handleFormSubmission={handleFormSubmission} />
       )}
-      <button onClick={() => console.log(pokemonsFound)}>yeehae</button>
+      {/* Game Status */}
+      <button
+        onClick={() =>
+          console.log(
+            `Pichu: ${foundPichu}, Plusle: ${foundPlusle}, Minun: ${foundMinun}, Game Won: ${gameWon} UserTime: ${userTime}, UserName: ${userName}`
+          )
+        }
+      >
+        Game State
+      </button>
     </div>
   );
 }
