@@ -64,7 +64,9 @@ function App() {
       {gameStarted ? null : (
         <UserForm handleFormSubmission={handleFormSubmission} />
       )}
-      {gameWon ? <EndGame userName={userName} userTime={userTime} /> : null}
+      {gameWon ? (
+        <EndGame gameOver={gameWon} userName={userName} userTime={userTime} />
+      ) : null}
       {/* Game Status */}
       <button
         onClick={() =>
