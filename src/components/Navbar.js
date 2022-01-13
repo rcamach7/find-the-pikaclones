@@ -31,7 +31,6 @@ function Icon(props) {
 
 function Timer(props) {
   const [startTime, setStartTime] = useState(null);
-  const [endTime, setEndTime] = useState(null);
 
   useEffect(() => {
     if (props.gameStarted) {
@@ -41,10 +40,10 @@ function Timer(props) {
 
   useEffect(() => {
     if (props.gameWon) {
-      setEndTime(Date.now());
-      props.setUserTime(Math.floor((startTime - endTime) / 1000));
+      const finalTime = Math.floor((startTime - Date.now()) / 1000) * -1;
+      props.setUserTime(finalTime);
     }
-  }, [endTime, props, props.gameWon, startTime]);
+  }, [props, props.gameWon, startTime]);
 
   return <div className="Timer"></div>;
 }

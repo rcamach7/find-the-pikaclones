@@ -4,6 +4,9 @@ import PictureContainer from "./components/PictureContainer";
 import Navbar from "./components/Navbar";
 import UserForm from "./components/UserForm";
 import EndGame from "./components/EndGame";
+// Firestore
+import { initializeApp } from "firebase/app";
+import { getFirebaseConfig } from "./config";
 
 function App() {
   // User information
@@ -16,6 +19,11 @@ function App() {
   const [foundPichu, setFoundPichu] = useState(false);
   const [foundPlusle, setFoundPlusle] = useState(false);
   const [foundMinun, setFoundMinun] = useState(false);
+
+  useEffect(() => {
+    const firebaseAppConfig = getFirebaseConfig();
+    initializeApp(firebaseAppConfig);
+  }, []);
 
   const handleFoundPokemon = (pokemonName) => {
     if (pokemonName === "pichu") {
@@ -56,7 +64,9 @@ function App() {
       {gameStarted ? null : (
         <UserForm handleFormSubmission={handleFormSubmission} />
       )}
-      {gameWon ? <EndGame userName={userName} userTime={userTime} /> : null}
+      {gameWon ? (
+        <EndGame gameOver={gameWon} userName={userName} userTime={userTime} />
+      ) : null}
       {/* Game Status */}
       <button
         onClick={() =>
