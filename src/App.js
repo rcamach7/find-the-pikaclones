@@ -4,10 +4,10 @@ import PictureContainer from "./components/PictureContainer";
 import Navbar from "./components/Navbar";
 import UserForm from "./components/UserForm";
 import EndGame from "./components/EndGame";
+import LeaderBoard from "./components/LeaderBoard";
 // Firestore
 import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "./config";
-import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
   // User information
@@ -20,7 +20,7 @@ function App() {
   const [foundPichu, setFoundPichu] = useState(false);
   const [foundPlusle, setFoundPlusle] = useState(false);
   const [foundMinun, setFoundMinun] = useState(false);
-  // Display Settings
+  // Display LeaderBoard while game hasn't started
   const [showLeaderBoard, setShowLeaderBoard] = useState(false);
   const [hideForm, setHideForm] = useState(false);
 
