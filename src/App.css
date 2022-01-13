@@ -169,3 +169,18 @@
   background-color: rgb(253, 202, 0);
   border-radius: 10px;
 }
+
+/* Leader Board Component */
+
+.LeaderBoard {
+  color: white;
+  padding: 40px;
+  font-size: 25px;
+
+  background-color: rgba(0, 0, 0, 0.9);
+  border: solid 5px rgb(253, 202, 0);
+
+  /* Positioning */
+  position: absolute;
+  top: 25vh;
+}

@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 export default function EndGame(props) {
+  const endGameRef = useRef(null);
+  const [maxSubmissions, setMaxSubmissions] = useState(0);
   // Implement Auto-Add to DB
   useEffect(() => {
     const pushToDatabase = async () => {
@@ -15,20 +17,23 @@ export default function EndGame(props) {
         console.error("Error writing to database", error);
       }
     };
-    if (props.userTime > 0) {
+    if (props.userTime > 0 && maxSubmissions < 1) {
       pushToDatabase();
+      setMaxSubmissions(1);
     }
-  }, [props.userName, props.userTime]);
+  }, [maxSubmissions, props.userName, props.userTime]);
 
   const viewLeaderBoards = (e) => {
     // Process user data and prevent page refreshing
     e.preventDefault();
 
-    alert("To Be Implemented");
+    // Hide myself and show leader board instead
+    endGameRef.current.style.display = "none";
+    props.setShowLeaderBoard(true);
   };
 
   return (
-    <div className="EndGame">
+    <div ref={endGameRef} className="EndGame">
       <h2>Congratulations!</h2>
       <h3>You have caught em' all!</h3> <br />
       <p>Username: {props.userName}</p>

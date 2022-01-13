@@ -7,6 +7,7 @@ import EndGame from "./components/EndGame";
 // Firestore
 import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "./config";
+import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
   // User information
@@ -19,6 +20,8 @@ function App() {
   const [foundPichu, setFoundPichu] = useState(false);
   const [foundPlusle, setFoundPlusle] = useState(false);
   const [foundMinun, setFoundMinun] = useState(false);
+  // Display Settings
+  const [showLeaderBoard, setShowLeaderBoard] = useState(false);
 
   useEffect(() => {
     const firebaseAppConfig = getFirebaseConfig();
@@ -65,8 +68,14 @@ function App() {
         <UserForm handleFormSubmission={handleFormSubmission} />
       )}
       {gameWon ? (
-        <EndGame gameOver={gameWon} userName={userName} userTime={userTime} />
+        <EndGame
+          setShowLeaderBoard={setShowLeaderBoard}
+          gameOver={gameWon}
+          userName={userName}
+          userTime={userTime}
+        />
       ) : null}
+      {showLeaderBoard ? <LeaderBoard /> : null}
       {/* Game Status */}
       <button
         onClick={() =>
