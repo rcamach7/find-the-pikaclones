@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { getFirestore, collection, query, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  query,
+  getDocs,
+  orderBy,
+} from "firebase/firestore";
 import { Player } from "../objects/Player";
 
 export default function LeaderBoard() {
@@ -7,13 +13,17 @@ export default function LeaderBoard() {
 
   useEffect(() => {
     loadDatabase();
+    // loadDatabaseOrdered();
   }, []);
 
   const loadDatabase = async () => {
     const curData = [];
 
     const querySnapshot = await getDocs(
-      query(collection(getFirestore(), "hallOfFame"))
+      query(
+        collection(getFirestore(), "hallOfFame"),
+        orderBy("userTime", "asc")
+      )
     );
     querySnapshot.forEach((record) => {
       const rawData = record.data();
