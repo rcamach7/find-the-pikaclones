@@ -13,7 +13,6 @@ export default function LeaderBoard() {
 
   useEffect(() => {
     loadDatabase();
-    // loadDatabaseOrdered();
   }, []);
 
   const loadDatabase = async () => {

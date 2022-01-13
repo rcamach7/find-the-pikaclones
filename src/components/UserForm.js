@@ -1,7 +1,16 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const UserForm = (props) => {
   const inputRef = useRef(null);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (props.hideForm) {
+      formRef.current.style.display = "none";
+    } else {
+      formRef.current.style.display = "block";
+    }
+  }, [props.hideForm]);
 
   const handleSubmission = (e) => {
     e.preventDefault();
@@ -14,7 +23,7 @@ const UserForm = (props) => {
   };
 
   return (
-    <form className="UserForm">
+    <form ref={formRef} className="UserForm">
       <div className="form-gameRules">
         <h2 className="form-title">Game Set-Up!</h2>
         <br />

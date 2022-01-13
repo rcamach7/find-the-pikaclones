@@ -16,7 +16,12 @@ export default function Navbar(props) {
         gameWon={props.gameWon}
         setUserTime={props.setUserTime}
       />
-      <button className="navbar-hallOfFame">Hall Of Fame</button>
+      <button
+        onClick={() => props.handleShowLeaderBoard()}
+        className="navbar-hallOfFame"
+      >
+        Hall Of Fame
+      </button>
     </nav>
   );
 }

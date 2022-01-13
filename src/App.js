@@ -22,6 +22,7 @@ function App() {
   const [foundMinun, setFoundMinun] = useState(false);
   // Display Settings
   const [showLeaderBoard, setShowLeaderBoard] = useState(false);
+  const [hideForm, setHideForm] = useState(false);
 
   useEffect(() => {
     const firebaseAppConfig = getFirebaseConfig();
@@ -49,6 +50,21 @@ function App() {
     setGameStarted(true);
   };
 
+  // Rename to toggle
+  const handleShowLeaderBoard = () => {
+    if (!hideForm) {
+      if (!gameStarted) {
+        setHideForm(true);
+        setShowLeaderBoard(true);
+      } else {
+        alert("Check our leader-board after the game - the time is ticking!");
+      }
+    } else {
+      setShowLeaderBoard(false);
+      setHideForm(false);
+    }
+  };
+
   return (
     <div className="App">
       <Navbar
@@ -58,6 +74,7 @@ function App() {
         foundPichu={foundPichu}
         foundPlusle={foundPlusle}
         foundMinun={foundMinun}
+        handleShowLeaderBoard={handleShowLeaderBoard}
       />
       <PictureContainer
         gameStarted={gameStarted}
@@ -65,7 +82,10 @@ function App() {
         handleFoundPokemon={handleFoundPokemon}
       />
       {gameStarted ? null : (
-        <UserForm handleFormSubmission={handleFormSubmission} />
+        <UserForm
+          handleFormSubmission={handleFormSubmission}
+          hideForm={hideForm}
+        />
       )}
       {gameWon ? (
         <EndGame
