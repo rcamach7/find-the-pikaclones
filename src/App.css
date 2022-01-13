@@ -27,10 +27,14 @@
 
   background-color: rgba(0, 0, 0, 0.9);
   border: solid 5px rgb(253, 202, 0);
+  border-radius: 10px;
 
   /* Positioning */
   position: absolute;
   top: 25vh;
+
+  /* Sizing */
+  max-width: 800px;
 }
 
 .form-title {
@@ -77,7 +81,7 @@
   height: 75px;
 
   border-radius: 10px;
-  border: solid 5px rgb(253, 202, 0);
+  border: solid 2.5px rgb(253, 202, 0);
 
   display: flex;
   justify-content: center;

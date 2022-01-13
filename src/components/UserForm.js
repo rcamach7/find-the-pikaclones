@@ -15,7 +15,7 @@ const UserForm = (props) => {
   const handleSubmission = (e) => {
     e.preventDefault();
     if (inputRef.current.value === "") {
-      alert("Please enter a valid name!");
+      alert("Enter A Username");
       return;
     }
     // Send username to parent - which will in turn start the game
@@ -40,12 +40,14 @@ const UserForm = (props) => {
         </ul>
       </div>
       <br />
-      {/* BEGIN FORM INPUT */}
-      <label className="form-title" htmlFor="name">
-        Enter Username To Begin...
-      </label>{" "}
       <br />
-      <input ref={inputRef} type="text" id="name" /> <br />
+      <input
+        ref={inputRef}
+        placeholder="Enter Username"
+        type="text"
+        id="name"
+      />
+      <br />
       <input
         id="beginGame-btn"
         type="submit"

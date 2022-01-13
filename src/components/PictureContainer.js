@@ -1,11 +1,20 @@
 import gameImage from "../assets/pokemons.jpeg";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import SelectionBox from "./SelectionBox";
 
 function PictureContainer(props) {
+  const img = useRef(null);
   const [displayInformation, setDisplayInformation] = useState({});
   const [userGuessLocation, setUserGuessLocation] = useState({});
   const [showSelection, setShowSelection] = useState(false);
+
+  useEffect(() => {
+    if (!props.gameStarted) {
+      img.current.style.cssText = "filter: blur(4px);";
+    } else {
+      img.current.style.cssText = "filter: ;";
+    }
+  }, [props.gameStarted]);
 
   const handleClick = (e) => {
     // First check to see if game started or is over
@@ -32,6 +41,7 @@ function PictureContainer(props) {
   return (
     <div className="PictureContainer">
       <img
+        ref={img}
         className="pictureContainer-image"
         src={gameImage}
         onClick={handleClick}
