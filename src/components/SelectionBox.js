@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SelectionBox = (props) => {
   // Represents position (in percentage) of pokemon located within our image.
@@ -57,12 +58,21 @@ const SelectionBox = (props) => {
   return (
     <div id="pokemon-selector" style={props.displayInformation}>
       <p className="selector-item" onClick={() => analyzeSelection("pichu")}>
+        {props.foundPichu ? (
+          <FontAwesomeIcon icon="check-square" size="1x" />
+        ) : null}
         Pichu
       </p>
       <p className="selector-item" onClick={() => analyzeSelection("plusle")}>
+        {props.foundPlusle ? (
+          <FontAwesomeIcon icon="check-square" size="1x" />
+        ) : null}
         Plusle
       </p>
       <p className="selector-item" onClick={() => analyzeSelection("minun")}>
+        {props.foundMinun ? (
+          <FontAwesomeIcon icon="check-square" size="1x" />
+        ) : null}
         Minun
       </p>
     </div>

@@ -9,12 +9,12 @@ function PictureContainer(props) {
   const [showSelection, setShowSelection] = useState(false);
 
   useEffect(() => {
-    if (!props.gameStarted) {
-      img.current.style.cssText = "filter: blur(4px);";
+    if (!props.gameStarted || props.gameWon) {
+      img.current.style.cssText = "filter: blur(5px);";
     } else {
       img.current.style.cssText = "filter: ;";
     }
-  }, [props.gameStarted]);
+  }, [props.gameStarted, props.gameWon]);
 
   const handleClick = (e) => {
     // First check to see if game started or is over
@@ -53,6 +53,9 @@ function PictureContainer(props) {
           userGuessLocation={userGuessLocation}
           setShowSelection={setShowSelection}
           handleFoundPokemon={props.handleFoundPokemon}
+          foundPichu={props.foundPichu}
+          foundPlusle={props.foundPlusle}
+          foundMinun={props.foundMinun}
         />
       ) : null}
     </div>
