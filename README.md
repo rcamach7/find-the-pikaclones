@@ -21,4 +21,17 @@ Find the pikaclones is a hidden object game, similar to that of Where's waldo. U
 - HTML
 - CSS
 
-![Screenshot](demo.png)
+![Screenshot](appDemo.png)
+
+#### Live Demo
+
+[Gihub Pages](http://rcamach7.github.io/find-the-pikaclones/).
+
+#### Local Installation & Running
+
+```bash
+git clone https://github.com/rcamach7/find-the-pikaclones.git
+cd find-the-pikaclones
+npm install
+npm run start
+```
