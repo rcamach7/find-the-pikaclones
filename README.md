@@ -21,4 +21,4 @@ Find the pikaclones is a hidden object game, similar to that of Where's waldo. U
 - HTML
 - CSS
 
-![Screenshot](appDemo.png)
+![Screenshot](demo.png)
