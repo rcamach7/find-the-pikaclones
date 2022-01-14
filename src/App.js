@@ -8,6 +8,8 @@ import LeaderBoard from "./components/LeaderBoard";
 // Firestore
 import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "./config";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCheckSquare, faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   // User information
@@ -80,6 +82,9 @@ function App() {
         gameStarted={gameStarted}
         gameWon={gameWon}
         handleFoundPokemon={handleFoundPokemon}
+        foundPichu={foundPichu}
+        foundPlusle={foundPlusle}
+        foundMinun={foundMinun}
       />
       {gameStarted ? null : (
         <UserForm
@@ -96,18 +101,9 @@ function App() {
         />
       ) : null}
       {showLeaderBoard ? <LeaderBoard /> : null}
-      {/* Game Status */}
-      <button
-        onClick={() =>
-          console.log(
-            `Pichu: ${foundPichu}, Plusle: ${foundPlusle}, Minun: ${foundMinun}, Game Won: ${gameWon} UserTime: ${userTime}, UserName: ${userName}`
-          )
-        }
-      >
-        Game State
-      </button>
     </div>
   );
 }
 
+library.add(faCheckSquare, faTrophy);
 export default App;

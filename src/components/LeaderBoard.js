@@ -5,8 +5,10 @@ import {
   query,
   getDocs,
   orderBy,
+  limit,
 } from "firebase/firestore";
 import { Player } from "../objects/Player";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function LeaderBoard() {
   const [data, setData] = useState([]);
@@ -21,7 +23,8 @@ export default function LeaderBoard() {
     const querySnapshot = await getDocs(
       query(
         collection(getFirestore(), "hallOfFame"),
-        orderBy("userTime", "asc")
+        orderBy("userTime", "asc"),
+        limit(10)
       )
     );
     querySnapshot.forEach((record) => {
@@ -34,17 +37,29 @@ export default function LeaderBoard() {
 
   return (
     <div className="LeaderBoard">
-      <p>Here is our leaderboard: </p>
-      <button onClick={() => console.log(data)}>Print Data</button>
+      <p>
+        <FontAwesomeIcon icon="trophy" /> Hall Of Fame{" "}
+        <FontAwesomeIcon icon="trophy" />
+      </p>
+      <br />
       <ul className="records-list">
         {data.map((record, i) => {
           return (
-            <li key={i}>
-              {record.userName} : {record.userTime}
+            <li key={i} className="leaderBoard-record">
+              <p>
+                {i + 1}. {record.userName}
+              </p>
+              <p>{record.userTime}s</p>
             </li>
           );
         })}
       </ul>
+      <button
+        className="refreshPage-btn"
+        onClick={() => window.location.reload()}
+      >
+        Home
+      </button>
     </div>
   );
 }

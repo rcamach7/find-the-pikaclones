@@ -38,6 +38,7 @@ export default function EndGame(props) {
       <h3>You have caught em' all!</h3> <br />
       <p>Username: {props.userName}</p>
       <p>Time: {props.userTime} seconds</p> <br />
+      <br />
       <p>Your result has been submitted!</p>
       <button
         onClick={(e) => {
@@ -45,7 +46,7 @@ export default function EndGame(props) {
         }}
         className="endGame-btn"
       >
-        View Hall Of Fame
+        Hall Of Fame
       </button>
     </div>
   );
