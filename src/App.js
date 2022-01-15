@@ -5,11 +5,13 @@ import Navbar from "./components/Navbar";
 import UserForm from "./components/UserForm";
 import EndGame from "./components/EndGame";
 import LeaderBoard from "./components/LeaderBoard";
+import WebFooter from "./components/WebFooter";
 // Firestore
 import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "./config";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCheckSquare, faTrophy } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   // User information
@@ -86,6 +88,7 @@ function App() {
         foundPlusle={foundPlusle}
         foundMinun={foundMinun}
       />
+      <WebFooter />
       {gameStarted ? null : (
         <UserForm
           handleFormSubmission={handleFormSubmission}
@@ -105,5 +108,5 @@ function App() {
   );
 }
 
-library.add(faCheckSquare, faTrophy);
+library.add(faCheckSquare, faTrophy, faGithub);
 export default App;
