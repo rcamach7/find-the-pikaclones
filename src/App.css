@@ -57,6 +57,7 @@
 #beginGame-btn,
 .refreshPage-btn {
   width: 150px;
+  color: black;
 
   font-size: 25px;
   font-weight: bolder;
@@ -64,6 +65,7 @@
   margin-top: 10px;
   background-color: rgb(253, 202, 0);
   border-radius: 10px;
+  border: none;
 }
 
 /* NAVBAR COMPONENT */
@@ -108,6 +110,7 @@
 
   background-color: rgb(253, 202, 0);
   border-radius: 10px;
+  border: none;
 }
 
 /* PICTURE CONTAINER COMPONENT */
@@ -161,11 +164,12 @@
 
   /* Positioning */
   position: absolute;
-  top: 25vh;
+  top: 15vh;
 }
 
 .endGame-btn {
   padding: 5px;
+  color: black;
 
   font-size: 15px;
   font-weight: bolder;
@@ -173,6 +177,7 @@
   margin-top: 5px;
   background-color: rgb(253, 202, 0);
   border-radius: 10px;
+  border: none;
 }
 
 /* Leader Board Component */
@@ -190,7 +195,7 @@
 
   /* Positioning */
   position: absolute;
-  top: 25vh;
+  top: 15vh;
 }
 
 .LeaderBoard ul {

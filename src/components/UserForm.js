@@ -43,7 +43,6 @@ const UserForm = (props) => {
         </ul>
       </div>
       <br />
-      <br />
       <input
         ref={inputRef}
         placeholder="Enter Username"
