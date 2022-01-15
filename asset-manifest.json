@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/find-the-pikaclones/static/css/main.41392273.css",
-    "main.js": "/find-the-pikaclones/static/js/main.62f13e2e.js",
+    "main.css": "/find-the-pikaclones/static/css/main.9794596a.css",
+    "main.js": "/find-the-pikaclones/static/js/main.78d2e960.js",
     "static/media/pokemons.jpeg": "/find-the-pikaclones/static/media/pokemons.6f474ce0e0463a76b24d.jpeg",
     "static/media/plusle.png": "/find-the-pikaclones/static/media/plusle.c20d10c7a4e5bceb8e1f.png",
     "static/media/pichu.png": "/find-the-pikaclones/static/media/pichu.414b539c1ac3d52ff7d8.png",
     "static/media/minun.png": "/find-the-pikaclones/static/media/minun.b59dada164679eb77486.png",
     "static/media/pokeball.png": "/find-the-pikaclones/static/media/pokeball.5150459608250e2c4b69.png",
     "index.html": "/find-the-pikaclones/index.html",
-    "main.41392273.css.map": "/find-the-pikaclones/static/css/main.41392273.css.map",
-    "main.62f13e2e.js.map": "/find-the-pikaclones/static/js/main.62f13e2e.js.map"
+    "main.9794596a.css.map": "/find-the-pikaclones/static/css/main.9794596a.css.map",
+    "main.78d2e960.js.map": "/find-the-pikaclones/static/js/main.78d2e960.js.map"
   },
   "entrypoints": [
-    "static/css/main.41392273.css",
-    "static/js/main.62f13e2e.js"
+    "static/css/main.9794596a.css",
+    "static/js/main.78d2e960.js"
   ]
 }
