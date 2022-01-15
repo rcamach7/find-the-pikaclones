@@ -5,6 +5,7 @@
 
   font-family: "Helvetica", Courier, monospace;
   text-align: center;
+  background-color: black;
 
   padding: 0;
   margin: 0;
@@ -13,7 +14,6 @@
 /* MAIN CONTAINER OF APP */
 .App {
   margin: 0 auto;
-  min-width: 500px;
 
   display: flex;
   flex-direction: column;
@@ -94,6 +94,7 @@
 }
 
 .navbar-hallOfFame {
+  color: black;
   padding: 5px;
   width: 125px;
   margin-left: auto;
